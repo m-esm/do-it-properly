@@ -15,6 +15,7 @@ head -1 "$SKILL" | grep -qx -- '---' || fail "SKILL.md must start with ---"
 
 metrics="$(python3 - "$ROOT" <<'PY'
 import json
+import os
 from pathlib import Path
 import re
 import sys
@@ -89,7 +90,13 @@ if ceremony_sentence not in text.replace("**", ""):
 
 contract_script = (root / "tests/check-contract.sh").resolve()
 for path in root.rglob("*"):
-    if not path.is_file() or ".git" in path.parts or path.resolve() == contract_script:
+    if ".git" in path.parts or path.resolve() == contract_script:
+        continue
+    if path.is_symlink():
+        if b"/Users/" in os.fsencode(os.readlink(path)):
+            fail(f"machine-local /Users/ path in {path.relative_to(root)}")
+        continue
+    if not path.is_file():
         continue
     if b"/Users/" in path.read_bytes():
         fail(f"machine-local /Users/ path in {path.relative_to(root)}")

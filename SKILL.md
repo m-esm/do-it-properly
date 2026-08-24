@@ -1,6 +1,6 @@
 ---
 name: do-it-properly
-description: "\"Do it properly\": meet this task's real bar, no theater."
+description: "Do it properly: meet this task's real bar, no theater."
 version: 0.1.0
 author: Mohsen Esmaeili (m-esm), Hermes Agent
 license: MIT
