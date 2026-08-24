@@ -12,7 +12,7 @@ The agent states one sentence:
 
 Y is the cheapest *observable* evidence for the failure that would actually matter. Existing repo gates win. A new test is allowed only when nothing extant can catch a silent, high-blast-radius failure.
 
-**Illegal unless that rule demands it:** unsolicited unit tests, e2e, TDD, review theater, always-fan-out, process ledgers.
+**Ceremony is illegal** unless this rule demands it: unsolicited unit tests, e2e, TDD, review theater, always-panel, always-fanout, artifact ledgers.
 
 ## Examples (not a lookup table)
 
