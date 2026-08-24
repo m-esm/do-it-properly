@@ -80,7 +80,7 @@ Match rollback to the installation method: remove a symlink or pointer; for a di
 bash tests/check-contract.sh
 ```
 
-Requires `README.md` and an MIT-licensed `LICENSE`, and checks that the SKILL.md frontmatter is closed. It also checks that the description is at most 60 characters and contains the trigger in its first 57 characters, the SKILL.md line limit, the Procedure step count, the ceremony sentence, machine-local home-directory leaks across the public tree, and copied SSA agent paths. It does not prove that an agent or CLI will follow the skill.
+Requires `README.md` and an MIT-licensed `LICENSE`, and checks that the SKILL.md frontmatter is closed. It also checks that the description is at most 60 characters and contains the trigger in its first 57 characters, the SKILL.md line limit, the Procedure step count, the ceremony sentence, machine-local macOS user-directory absolute paths in public files and symlink targets, and copied SSA agent paths. It does not prove that an agent or CLI will follow the skill.
 
 ## License
 

@@ -50,4 +50,4 @@ Prove-then-fix means bar-relevant evidence, not write a test. An explicit repo g
 
 ## Verification
 
-The kickoff sentence named X/Y/Z. The done message shows Y, or one blocker. You did not add gates after the fact to look thorough.
+The bar sentence named X/Y/Z. The done message shows Y, or one blocker. You did not add gates after the fact to look thorough.
