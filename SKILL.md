@@ -8,14 +8,11 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [engineering, judgment, context-bar]
-    related_skills: [smart-subagents]
 ---
 
 # do-it-properly
 
 Saying **do it properly** means: name the bar that makes *this* task done in *this* context, then meet it. Nothing more. It is not full-engineering mode, TDD, e2e, or a process ledger.
-
-Live labor toolkit (invoke, never copy): `$HOME/.claude/vendor/smart-subagents`.
 
 ## When to Use
 
@@ -38,11 +35,13 @@ Prove-then-fix means bar-relevant evidence, not write a test. An explicit repo g
 ## Procedure
 
 1. **Bar.** One sentence: done / proven by / not required.
-2. **Route only if needed.** Survey only on a real fork. Plan panel only on consequential multi-shape design. Quota check only if a panel or dispatch is actually on the table (`python3 $HOME/.claude/vendor/smart-subagents/scripts/ai-cli-usage.py`; honor `remaining_pct`; never redeem Codex banked resets). One worker default. In-session for small, non-isolable, live-steering, or dirty mid-task work. Never Hermes `delegate_task` as a substitute. Invoke live `smart-subagents.sh` for isolable labor.
+2. **Route only if needed.**
+   - Survey only on a real fork. Plan panel only on consequential multi-shape design.
+   - Quota check only if a panel or dispatch is actually on the table (`python3 $HOME/.claude/vendor/smart-subagents/scripts/ai-cli-usage.py`; honor `remaining_pct`; never redeem Codex banked resets).
+   - One worker default. In-session for small, non-isolable, live-steering, or dirty mid-task work.
+   - Never Hermes `delegate_task` as a substitute. Invoke live `smart-subagents.sh` for isolable labor.
 3. **Do the smallest reversible change.** Pre-change repro only when the bar needs it. Mid-task: stop at the next safe boundary; do not discard dirty work; do not silently move it into a new worktree.
-4. **Verify Y, then stop.** Working result or one named blocker.
-
-Unused gates stay silent. No skip-justification paragraphs.
+4. **Verify Y, then stop.** Working result or one named blocker. Unused gates stay silent. No skip-justification paragraphs.
 
 ## Pitfalls
 
