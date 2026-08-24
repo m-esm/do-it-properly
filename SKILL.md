@@ -40,7 +40,7 @@ Prove-then-fix means bar-relevant evidence, not write a test. An explicit repo g
 1. **Bar.** One sentence: done / proven by / not required.
 2. **Route only if needed.** Survey only on a real fork. Plan panel only on consequential multi-shape design. Quota check only if a panel or dispatch is actually on the table (`python3 $HOME/.claude/vendor/smart-subagents/scripts/ai-cli-usage.py`; honor `remaining_pct`; never redeem Codex banked resets). One worker default. In-session for small, non-isolable, live-steering, or dirty mid-task work. Never Hermes `delegate_task` as a substitute. Invoke live `smart-subagents.sh` for isolable labor.
 3. **Do the smallest reversible change.** Pre-change repro only when the bar needs it. Mid-task: stop at the next safe boundary; do not discard dirty work; do not silently move it into a new worktree.
-4. **Verify Y, then stop.** Working result or one named blocker. Follow the active user/repo git policy; this skill does not pick main vs PR.
+4. **Verify Y, then stop.** Working result or one named blocker.
 
 Unused gates stay silent. No skip-justification paragraphs.
 

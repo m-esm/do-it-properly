@@ -34,22 +34,23 @@ Stand-down: `quick and dirty is fine`.
 
 ## Install
 
-Canonical clone (or submodule) the repo into the skill directory your agent already reads.
+Clone (or submodule) the repository into a skill directory your agent already reads. For example:
 
 ```bash
 git clone https://github.com/m-esm/do-it-properly.git \
   "$HOME/.claude/skills/do-it-properly"
 ```
 
-Then point other agents at that same checkout. Prefer a symlink. If a loader ignores symlinks, a 3-line pointer file that says "read the canonical SKILL.md" is allowed. Do not copy the procedure.
+To share one checkout between agents, prefer symlinks. If a loader ignores symlinks, a short pointer file that says "read the canonical SKILL.md" is allowed. Do not copy the procedure.
 
-| Agent | Typical path |
+These are conventional locations, not claims of loader support. Confirm the path against the agent's current documentation.
+
+| Agent | Conventional path |
 |---|---|
 | Claude Code | `$HOME/.claude/skills/do-it-properly` |
 | Hermes | `$HOME/.hermes/skills/software-development/do-it-properly` → symlink |
 | Codex | `$HOME/.codex/skills/do-it-properly` → symlink |
 | Grok | `$HOME/.grok/skills/do-it-properly` → symlink |
-| Kimi | No global skill loader found. Unsupported until one exists. |
 
 Optional backstop in a global `AGENTS.md` the CLI actually loads:
 
@@ -58,7 +59,7 @@ On "do it properly", read $HOME/.claude/skills/do-it-properly/SKILL.md.
 Proof = the named bar, not a new test unless that bar or an explicit repo rule requires it.
 ```
 
-Do not claim a CLI is supported until a fresh session loads the skill on a positive phrase and ignores a negative one.
+Installation at a conventional path is not proof that a loader used the skill. This repository claims no cross-CLI behavioral coverage. Verify a loader in a fresh session with a positive phrase and a negative phrase before describing it as supported.
 
 ### Rollback
 
@@ -79,7 +80,7 @@ Remove the symlink or pointer. The clone can stay. `git submodule deinit` if you
 bash tests/check-contract.sh
 ```
 
-Guards frontmatter length, trigger window, no machine-local paths, no vendored SSA tree. It does not prove an agent will follow the skill.
+Checks that the description is at most 60 characters and contains the trigger in its first 57 characters. It also checks the SKILL.md line limit, the Procedure step count, the ceremony sentence, machine-local home-directory leaks across the public tree, and copied SSA agent paths. It does not prove that an agent or CLI will follow the skill.
 
 ## License
 
