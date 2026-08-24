@@ -22,9 +22,9 @@ Load when the user gives a prospective instruction about *how this request shoul
 
 ## Bar
 
-1. Name the requested outcome and the most plausible consequential failure.
-2. Use any explicit user, repo, or domain gate that already detects that failure.
-3. Otherwise pick the cheapest observable evidence for that risk. A **new** test exists only when it *is* that evidence, and only if failure would be silent with real blast radius.
+- Name the requested outcome and the most plausible consequential failure.
+- Use any explicit user, repo, or domain gate that already detects that failure.
+- Otherwise pick the cheapest observable evidence for that risk. A **new** test exists only when it *is* that evidence, and only if failure would be silent with real blast radius.
 
 State once: `done = X, proven by Y; not required: Z.` A bar of nothing is illegal. Y must be observable.
 

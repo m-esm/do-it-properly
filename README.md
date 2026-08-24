@@ -37,6 +37,7 @@ Stand-down: `quick and dirty is fine`.
 Clone (or submodule) the repository into a skill directory your agent already reads. For example:
 
 ```bash
+mkdir -p "$HOME/.claude/skills"
 git clone https://github.com/m-esm/do-it-properly.git \
   "$HOME/.claude/skills/do-it-properly"
 ```
