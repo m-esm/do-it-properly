@@ -107,6 +107,9 @@ PY
 read -r n lines steps <<< "$metrics"
 if grep -R --exclude-dir=.git --exclude='check-contract.sh' -n 'vendor/smart-subagents/agents' "$ROOT"; then
   fail "SSA agent file path copied into the tree"
+else
+  grep_status=$?
+  [[ $grep_status -eq 1 ]] || fail "SSA agent file path scan failed (grep exit $grep_status)"
 fi
 
 grep -q 'done = X, proven by Y' "$SKILL" || fail "missing bar sentence"
