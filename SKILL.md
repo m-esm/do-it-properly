@@ -38,7 +38,7 @@ Prove-then-fix means bar-relevant evidence, not write a test. An explicit repo g
 2. **Route only if needed.**
    - Survey only on a real fork. Plan panel only on consequential multi-shape design.
    - Quota check only if a panel or dispatch is actually on the table (run `python3 scripts/ai-cli-usage.py` from the live root; honor `remaining_pct`; never redeem Codex banked resets).
-   - One worker default. In-session for small, non-isolable, live-steering, or dirty mid-task work. Never Hermes `delegate_task` as a substitute; invoke live for isolable labor.
+   - One worker default. In-session for small, non-isolable, live-steering, or dirty mid-task work. Never Hermes `delegate_task` as a substitute; invoke `scripts/smart-subagents.sh` for isolable labor.
 3. **Do the smallest reversible change.** Pre-change repro only when the bar needs it. Mid-task: stop at the next safe boundary; do not discard dirty work; do not silently move it into a new worktree.
 4. **Verify Y, then stop.** Working result or one named blocker. Unused gates stay silent. No skip-justification paragraphs.
 

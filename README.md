@@ -60,7 +60,7 @@ On "do it properly", read $HOME/.claude/skills/do-it-properly/SKILL.md.
 Proof = the named bar, not a new test unless that bar or an explicit repo rule requires it.
 ```
 
-Installation at a conventional path is not proof that a loader used the skill. This repository claims no cross-CLI behavioral coverage. Verify a loader in a fresh session with a positive phrase and a negative phrase before describing it as supported.
+Installation at a conventional path is not proof that a loader used the skill. This repository claims no cross-CLI behavioral coverage. Before describing a loader as supported, verify in a fresh session that a positive phrase triggers the bar sentence and a negative phrase does not.
 
 ### Rollback
 
