@@ -1,6 +1,6 @@
 # do-it-properly
 
-A load-signal skill. When you tell an agent **do it properly**, it names the bar for *this* task and meets that bar. It does not switch into ceremonial engineering.
+A default session contract. The agent names the bar for *this* task and meets it, without waiting for a phrase. It does not switch into ceremonial engineering.
 
 Not a new orchestrator. Not a rewrite of [smart-subagents](https://github.com/m-esm/smart-subagents). Not "write unit tests and e2e."
 
@@ -24,11 +24,9 @@ Y is the cheapest *observable* evidence for the failure that would actually matt
 | Data loss / money / novel concurrency | Repro first, then the fix. |
 | Mechanical rename | One worker, no panel, no new tests. |
 
-## Trigger
+## Default
 
-Counts: `do it properly`, `do this properly`, `do it right`, `properly this time`, `the proper way`, `can you do this properly?`
-
-Does not count: `properly escaped`, `was this done properly?`, quotes, hypotheticals, `make it clean`.
+Always on. Load `SKILL.md` at the start of work. The phrase is a reminder, not a gate.
 
 Stand-down: `quick and dirty is fine`.
 
@@ -53,14 +51,15 @@ These are conventional locations, not claims of loader support. Confirm the path
 | Codex | `$HOME/.codex/skills/do-it-properly` → symlink |
 | Grok | `$HOME/.grok/skills/do-it-properly` → symlink |
 
-Optional backstop in a global `AGENTS.md` the CLI actually loads:
+Always-on backstop in a global `AGENTS.md` the CLI actually loads:
 
 ```
-On "do it properly", read $HOME/.claude/skills/do-it-properly/SKILL.md.
+Always follow $HOME/.claude/skills/do-it-properly/SKILL.md.
 Proof = the named bar, not a new test unless that bar or an explicit repo rule requires it.
+Stand-down only if the user says quick and dirty is fine.
 ```
 
-Installation at a conventional path is not proof that a loader used the skill. This repository claims no cross-CLI behavioral coverage. Before describing a loader as supported, verify in a fresh session that a positive phrase triggers the bar sentence and a negative phrase does not.
+Installation at a conventional path is not proof that a loader used the skill. This repository claims no cross-CLI behavioral coverage. Before describing a loader as supported, verify in a fresh session that the agent names a bar without being asked.
 
 ### Rollback
 
@@ -70,7 +69,7 @@ Match rollback to the installation method: remove a symlink or pointer; for a di
 
 | Concern | Owner |
 |---|---|
-| Trigger, bar, routing, done | this skill |
+| When to load, bar, routing, done | this skill |
 | Quota, worktree, dispatch, verify, plan panel | live smart-subagents |
 | How to survey options, CGC, commit/PR | the active repo/user instructions |
 | TDD / review / e2e walkthroughs | those skills, loaded only when the bar needs them |

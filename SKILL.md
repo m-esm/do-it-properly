@@ -1,6 +1,6 @@
 ---
 name: do-it-properly
-description: "Do it properly: meet this task's real bar, no theater."
+description: "Default: do it properly. Meet this task's real bar."
 version: 0.1.0
 author: Mohsen Esmaeili (m-esm), Hermes Agent
 license: MIT
@@ -12,13 +12,13 @@ metadata:
 
 # do-it-properly
 
-Saying **do it properly** means: name the bar that makes *this* task done in *this* context, then meet it. Nothing more. It is not full-engineering mode, TDD, e2e, or a process ledger.
+Default contract. Name the bar that makes *this* task done in *this* context, then meet it. Nothing more. It is not full-engineering mode, TDD, e2e, or a process ledger. The phrase is a reminder, not a prerequisite.
 
 When routing, use live root `$HOME/.claude/vendor/smart-subagents`; invoke `scripts/smart-subagents.sh` there; never copy it.
 
 ## When to Use
 
-Load when the user gives a prospective instruction about *how this request should be done*: `do it properly`, `do this properly`, `do it right`, `properly this time`, `the proper way`, or a polite form (`can you do this properly?`). Don't use for: artifact adverbs (`properly escaped`), retrospectives (`was this done properly?`), quotes, hypotheticals, generic quality (`make it clean`). Ambiguous → one yes/no. Stand-down (`quick and dirty is fine`) → one-line ack, then drop this skill.
+Load at the start of every task. Do not wait for `do it properly`. That phrase, and polite forms, are reminders. Stand-down (`quick and dirty is fine`) → one-line ack, then drop this skill for that request only.
 
 ## Bar
 
