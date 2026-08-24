@@ -9,6 +9,7 @@ fail() { echo "FAIL: $*" >&2; exit 1; }
 [[ -f "$SKILL" ]] || fail "missing SKILL.md"
 [[ -f "$ROOT/README.md" ]] || fail "missing README.md"
 [[ -f "$ROOT/LICENSE" ]] || fail "missing LICENSE"
+head -1 "$ROOT/LICENSE" | grep -qx -- 'MIT License' || fail "LICENSE must start with MIT License"
 
 head -1 "$SKILL" | grep -qx -- '---' || fail "SKILL.md must start with ---"
 

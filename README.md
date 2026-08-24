@@ -80,7 +80,7 @@ Remove the symlink or pointer. The clone can stay. `git submodule deinit` if you
 bash tests/check-contract.sh
 ```
 
-Checks that the description is at most 60 characters and contains the trigger in its first 57 characters. It also checks the SKILL.md line limit, the Procedure step count, the ceremony sentence, machine-local home-directory leaks across the public tree, and copied SSA agent paths. It does not prove that an agent or CLI will follow the skill.
+Requires `README.md` and an MIT-licensed `LICENSE`, and checks that the SKILL.md frontmatter is closed. It also checks that the description is at most 60 characters and contains the trigger in its first 57 characters, the SKILL.md line limit, the Procedure step count, the ceremony sentence, machine-local home-directory leaks across the public tree, and copied SSA agent paths. It does not prove that an agent or CLI will follow the skill.
 
 ## License
 
