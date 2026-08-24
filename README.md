@@ -63,7 +63,7 @@ Installation at a conventional path is not proof that a loader used the skill. T
 
 ### Rollback
 
-Remove the symlink or pointer. The clone can stay. `git submodule deinit` if you added it that way.
+Match rollback to the installation method: remove a symlink or pointer; for a direct clone, delete the checkout or move it outside the agent's skill directories. For a submodule, deinitialize it and remove the tracked submodule from the parent repository; `git submodule deinit` alone is not a complete uninstall.
 
 ## Ownership
 

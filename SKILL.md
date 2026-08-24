@@ -14,7 +14,7 @@ metadata:
 
 Saying **do it properly** means: name the bar that makes *this* task done in *this* context, then meet it. Nothing more. It is not full-engineering mode, TDD, e2e, or a process ledger.
 
-Invoke live `$HOME/.claude/vendor/smart-subagents/scripts/smart-subagents.sh`; never copy it.
+When routing, invoke live `$HOME/.claude/vendor/smart-subagents/scripts/smart-subagents.sh`; never copy it.
 
 ## When to Use
 
