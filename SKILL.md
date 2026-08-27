@@ -36,6 +36,11 @@ Real example, 3dvp [PR #12](https://github.com/m-esm/3d-vibing-platform/pull/12)
 
 Prove-then-fix means bar-relevant evidence, not write a test. An explicit repo gate (CI, lint, mandated regression) stays part of the bar. This skill does not override AGENTS.md; it defines what proof is.
 
+Proof token: Y is a checkable token of the kind the bar named. Do not mix kinds.
+
+- `Done= SHA` → commit on a named remote. The SHA (or URL) is Y. Chat paste is not a substitute.
+- `Done= paste` → command output in the reply is Y. Do not mint a SHA unless the bar asked for one.
+
 ## Procedure
 
 1. **Bar.** One sentence: done / proven by / not required.
