@@ -30,6 +30,8 @@ State once: `done = X, proven by Y; not required: Z.` A bar of nothing is illega
 
 Real example, 3dvp [PR #14](https://github.com/m-esm/3d-vibing-platform/pull/14): `done = /admin/users does list/search/create/set-role/ban/unban plus memberships with last-admin and self guards, proven by verify_admin_users + verify_acl + verify_acl_routes; not required: S1, impersonation, SMTP.`
 
+Real example, 3dvp [PR #12](https://github.com/m-esm/3d-vibing-platform/pull/12): `done = 3DVP mark in nav/login/signup/create-progress and a left-aligned Queued→Ready stage track, proven by verify_create_progress + verify_acl + verify_acl_routes; not required: new tokens, CAD.`
+
 **Ceremony is illegal** unless this rule demands it: unsolicited unit tests, e2e, TDD, review theater, always-panel, always-fanout, artifact ledgers.
 
 Prove-then-fix means bar-relevant evidence, not write a test. An explicit repo gate (CI, lint, mandated regression) stays part of the bar. This skill does not override AGENTS.md; it defines what proof is.
