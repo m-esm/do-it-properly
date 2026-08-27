@@ -28,6 +28,8 @@ Load at the start of every task. Do not wait for `do it properly`. That phrase, 
 
 State once: `done = X, proven by Y; not required: Z.` A bar of nothing is illegal. Y must be observable.
 
+Real example, 3dvp [PR #14](https://github.com/m-esm/3d-vibing-platform/pull/14): `done = /admin/users does list/search/create/set-role/ban/unban plus memberships with last-admin and self guards, proven by verify_admin_users + verify_acl + verify_acl_routes; not required: S1, impersonation, SMTP.`
+
 **Ceremony is illegal** unless this rule demands it: unsolicited unit tests, e2e, TDD, review theater, always-panel, always-fanout, artifact ledgers.
 
 Prove-then-fix means bar-relevant evidence, not write a test. An explicit repo gate (CI, lint, mandated regression) stays part of the bar. This skill does not override AGENTS.md; it defines what proof is.
