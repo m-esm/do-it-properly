@@ -6,6 +6,24 @@ SKILL="$ROOT/SKILL.md"
 
 fail() { echo "FAIL: $*" >&2; exit 1; }
 
+# Done=paste is not legal proof for product channels.
+paste_carveout_ok() {
+  local skill="$1"
+  grep -E -q 'Done=[[:space:]]*paste' "$skill" || return 0
+  grep -qi 'not legal proof' "$skill" \
+    && grep -q '#3dvp' "$skill" \
+    && grep -q '#bet' "$skill" \
+    && grep -q '#mechlib' "$skill" \
+    && grep -q '#onlydash' "$skill"
+}
+
+if [[ "${1:-}" == "--skill" ]]; then
+  [[ -n "${2:-}" && -f "$2" ]] || fail "usage: $0 --skill PATH"
+  paste_carveout_ok "$2" || fail "SKILL.md treats Done=paste as legal proof for #3dvp/#bet/#mechlib/#onlydash"
+  echo "ok: paste carve-out present in $2"
+  exit 0
+fi
+
 [[ -f "$SKILL" ]] || fail "missing SKILL.md"
 [[ -f "$ROOT/README.md" ]] || fail "missing README.md"
 [[ -f "$ROOT/LICENSE" ]] || fail "missing LICENSE"
@@ -113,6 +131,13 @@ else
 fi
 
 grep -q 'done = X, proven by Y' "$SKILL" || fail "missing bar sentence"
+
+paste_carveout_ok "$SKILL" || fail "SKILL.md treats Done=paste as legal proof for #3dvp/#bet/#mechlib/#onlydash"
+fixture="$ROOT/tests/fixtures/done-paste-for-3dvp.md"
+[[ -f "$fixture" ]] || fail "missing fixture tests/fixtures/done-paste-for-3dvp.md"
+if paste_carveout_ok "$fixture"; then
+  fail "fixture that names Done=paste for #3dvp must fail the carve-out check"
+fi
 
 generic_illegal="$ROOT/examples/bar-cgc-route-invalid.md"
 [[ -f "$generic_illegal" ]] || fail "missing generic illegal CGC-SKIP example (examples/bar-cgc-route-invalid.md)"
