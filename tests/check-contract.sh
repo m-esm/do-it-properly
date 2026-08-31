@@ -114,4 +114,20 @@ fi
 
 grep -q 'done = X, proven by Y' "$SKILL" || fail "missing bar sentence"
 
+generic_illegal="$ROOT/examples/bar-cgc-route-invalid.md"
+[[ -f "$generic_illegal" ]] || fail "missing generic illegal CGC-SKIP example (examples/bar-cgc-route-invalid.md)"
+per_route=()
+shopt -s nullglob
+for f in "$ROOT"/examples/bar-cgc-route-*.md; do
+  base="$(basename "$f")"
+  case "$base" in
+    bar-cgc-route-invalid.md|bar-cgc-route-none.md) ;;
+    *) per_route+=("$base") ;;
+  esac
+done
+shopt -u nullglob
+if ((${#per_route[@]})); then
+  fail "examples/ still enumerates per-route illegal CGC-SKIP files: ${per_route[*]} (one generic file covers every remaining illegal route)"
+fi
+
 echo "ok: description=$n chars, SKILL.md=$lines lines, steps=$steps"
