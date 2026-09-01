@@ -6,15 +6,9 @@ SKILL="$ROOT/SKILL.md"
 
 fail() { echo "FAIL: $*" >&2; exit 1; }
 
-# Done=paste is not legal proof for product channels.
-paste_carveout_ok() {
-  local skill="$1"
-  grep -E -q 'Done=[[:space:]]*paste' "$skill" || return 0
-  grep -qi 'not legal proof' "$skill" \
-    && grep -q '#3dvp' "$skill" \
-    && grep -q '#bet' "$skill" \
-    && grep -q '#mechlib' "$skill" \
-    && grep -q '#onlydash' "$skill"
+# Done=paste is not a legal proof kind. Only the negative fixture may contain it.
+no_legal_paste() {
+  ! grep -E -q 'Done=[[:space:]]*paste' "$1"
 }
 
 # Done=look (rendered artifact + sentence after looking) is required for product channels.
@@ -31,9 +25,9 @@ look_token_ok() {
 
 if [[ "${1:-}" == "--skill" ]]; then
   [[ -n "${2:-}" && -f "$2" ]] || fail "usage: $0 --skill PATH"
-  paste_carveout_ok "$2" || fail "SKILL.md treats Done=paste as legal proof for #3dvp/#bet/#mechlib/#onlydash"
+  no_legal_paste "$2" || fail "SKILL.md still presents Done=paste as a legal proof kind"
   look_token_ok "$2" || fail "SKILL.md Proof token has no Done=look (rendered artifact + sentence after looking) for #3dvp/#bet/#mechlib/#onlydash"
-  echo "ok: paste carve-out and look token present in $2"
+  echo "ok: no legal Done=paste and look token present in $2"
   exit 0
 fi
 
@@ -145,11 +139,15 @@ fi
 
 grep -q 'done = X, proven by Y' "$SKILL" || fail "missing bar sentence"
 
-paste_carveout_ok "$SKILL" || fail "SKILL.md treats Done=paste as legal proof for #3dvp/#bet/#mechlib/#onlydash"
+no_legal_paste "$SKILL" || fail "SKILL.md still presents Done=paste as a legal proof kind"
 fixture="$ROOT/tests/fixtures/done-paste-for-3dvp.md"
 [[ -f "$fixture" ]] || fail "missing fixture tests/fixtures/done-paste-for-3dvp.md"
-if paste_carveout_ok "$fixture"; then
-  fail "fixture that names Done=paste for #3dvp must fail the carve-out check"
+grep -E -q 'Done=[[:space:]]*paste' "$fixture" || fail "negative fixture must contain Done=paste"
+if no_legal_paste "$fixture"; then
+  fail "fixture that names Done=paste as legal must fail the no-paste check"
+fi
+if grep -R --exclude-dir=.git --exclude='check-contract.sh' --exclude='done-paste-for-3dvp.md' -E -n 'Done=[[:space:]]*paste' "$ROOT"; then
+  fail "Done=paste appears outside the negative fixture"
 fi
 
 look_token_ok "$SKILL" || fail "SKILL.md Proof token has no Done=look (rendered artifact + sentence after looking) for #3dvp/#bet/#mechlib/#onlydash"
