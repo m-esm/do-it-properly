@@ -17,10 +17,23 @@ paste_carveout_ok() {
     && grep -q '#onlydash' "$skill"
 }
 
+# Done=look (rendered artifact + sentence after looking) is required for product channels.
+look_token_ok() {
+  local skill="$1"
+  grep -E -q 'Done=[[:space:]]*look' "$skill" \
+    && grep -qi 'rendered artifact' "$skill" \
+    && grep -qi 'sentence after looking' "$skill" \
+    && grep -q '#3dvp' "$skill" \
+    && grep -q '#bet' "$skill" \
+    && grep -q '#mechlib' "$skill" \
+    && grep -q '#onlydash' "$skill"
+}
+
 if [[ "${1:-}" == "--skill" ]]; then
   [[ -n "${2:-}" && -f "$2" ]] || fail "usage: $0 --skill PATH"
   paste_carveout_ok "$2" || fail "SKILL.md treats Done=paste as legal proof for #3dvp/#bet/#mechlib/#onlydash"
-  echo "ok: paste carve-out present in $2"
+  look_token_ok "$2" || fail "SKILL.md Proof token has no Done=look (rendered artifact + sentence after looking) for #3dvp/#bet/#mechlib/#onlydash"
+  echo "ok: paste carve-out and look token present in $2"
   exit 0
 fi
 
@@ -137,6 +150,13 @@ fixture="$ROOT/tests/fixtures/done-paste-for-3dvp.md"
 [[ -f "$fixture" ]] || fail "missing fixture tests/fixtures/done-paste-for-3dvp.md"
 if paste_carveout_ok "$fixture"; then
   fail "fixture that names Done=paste for #3dvp must fail the carve-out check"
+fi
+
+look_token_ok "$SKILL" || fail "SKILL.md Proof token has no Done=look (rendered artifact + sentence after looking) for #3dvp/#bet/#mechlib/#onlydash"
+no_look="$ROOT/tests/fixtures/no-look-token.md"
+[[ -f "$no_look" ]] || fail "missing fixture tests/fixtures/no-look-token.md"
+if look_token_ok "$no_look"; then
+  fail "fixture with no Done=look token must fail the look-token check"
 fi
 
 generic_illegal="$ROOT/examples/bar-cgc-route-invalid.md"

@@ -40,6 +40,7 @@ Proof token: Y is a checkable token of the kind the bar named. Do not mix kinds.
 
 - `Done= SHA` → commit on a named remote. The SHA (or URL) is Y. Chat paste is not a substitute.
 - `Done= paste` → command output in the reply is Y. Do not mint a SHA unless the bar asked for one. Not legal proof for #3dvp/#bet/#mechlib/#onlydash.
+- `Done= look` → rendered artifact + a sentence after looking. Required for #3dvp/#bet/#mechlib/#onlydash; SHA and paste are not a substitute.
 
 ## Procedure
 
