@@ -8,7 +8,7 @@ target: 1
 measure: python3 -c "from pathlib import Path; r=Path('.'); print(sum(1 for p in r.rglob('*') if p.is_file() and '.git' not in p.parts and p.name=='check-run-bar.sh'))"
 evidence:
   - design/roadmap/evidence/2026-09-04-speckit-converge.png
-  - design/roadmap/evidence/2026-09-04-speckit-converge-extract.md
+  - design/roadmap/evidence/2026-09-04-speckit-converge-extract.txt
 slices: 0/3
 after:
 ---
