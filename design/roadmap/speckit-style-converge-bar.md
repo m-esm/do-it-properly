@@ -1,5 +1,5 @@
 ---
-state: proposed
+state: promoted
 lens: outside-in
 created: 2026-09-03
 metric: in-repo scripts named check-run-bar.sh that exit 0/1 on whether a run named a checkable bar
