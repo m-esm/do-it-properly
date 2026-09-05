@@ -1,5 +1,5 @@
 ---
-state: promoted
+state: building
 lens: outside-in
 created: 2026-09-03
 metric: in-repo scripts named check-run-bar.sh that exit 0/1 on whether a run named a checkable bar
@@ -9,7 +9,7 @@ measure: python3 -c "from pathlib import Path; r=Path('.'); print(sum(1 for p in
 evidence:
   - design/roadmap/evidence/2026-09-04-speckit-converge.png
   - design/roadmap/evidence/2026-09-04-speckit-converge-extract.txt
-slices: 0/3
+slices: 1/3
 after:
 ---
 # Spec Kit-style converge for the named bar
@@ -24,6 +24,6 @@ Spec Kit: run `/speckit.converge`; either ✅ Converged or more tasks. do-it-pro
 
 ## Slices
 
-- [ ] `tests/check-run-bar.sh` plus pass/fail fixtures; measure command prints 1.
+- [x] `tests/check-run-bar.sh` plus pass/fail fixtures; measure command prints 1.
 - [ ] README Contract check names scoring a run, not only SKILL.md.
 - [ ] SKILL.md Verification points at the script without crossing the 80-line cap.
