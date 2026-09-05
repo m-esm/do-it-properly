@@ -59,4 +59,4 @@ Proof token: Y is a checkable token of the kind the bar named. Do not mix kinds.
 
 ## Verification
 
-The bar sentence named X/Y/Z. The done message shows Y, or one blocker. You did not add gates after the fact to look thorough.
+The bar sentence named X/Y/Z. The done message shows Y, or one blocker. You did not add gates after the fact to look thorough. Score a run with `bash tests/check-run-bar.sh RUN.md` (exit 0 iff `done =` and `proven by`).
