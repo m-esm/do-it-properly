@@ -90,6 +90,14 @@ bash tests/check-run-bar.sh RUN.md
 
 Exits 0 iff the file contains `done =` and `proven by`. `check-contract.sh` stays the SKILL.md gate.
 
+Score a directory of runs, not only one FILE:
+
+```bash
+bash tests/score-run-bar-rate.sh DIR
+```
+
+Prints `hits/total pct`. `check-run-bar.sh` stays the per-run gate.
+
 ## License
 
 MIT. Copyright 2026 Mohsen Esmaeili.
