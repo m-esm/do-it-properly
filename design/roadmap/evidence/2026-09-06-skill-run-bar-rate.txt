@@ -1,0 +1,34 @@
+# Query 2026-09-06: skill-loading cron run bar rate
+# Jobs: cron jobs.json where skill is do-it-properly or do-it-properly is in skills[]
+# Files: cron/output/<job_id>/*.md, ## Response body scored for `done =` and `proven by`
+# Machine-local paths omitted.
+
+jobs: 14
+runs: 206
+with_bar: 82
+pct: 39.8
+no_Response_header: 83
+GOAL.md number 2 target: 90
+
+per_job name n hits pct
+improve-agents 11 8 72.7
+pawl-work-retro 50 3 6.0
+hourly-channel-tasks 50 2 4.0
+onlydash-mac-develop 50 35 70.0
+assign-13-3dvp-yaw-poses 0 0
+assign-13-mechlib-arc-ratchet 0 0
+team-forum 5 0 0.0
+assign-17-onlydash-merge-2067623 1 0 0.0
+assign-21-onlydash-merge-ce5a6e6 1 0 0.0
+ch-3dvp 8 8 100.0
+ch-mechlib 8 8 100.0
+ch-smart-subagents 8 7 87.5
+ch-do-it-properly 7 6 85.7
+ch-onlydash-landing 7 5 71.4
+
+in-repo score-run-bar-rate.sh count this tick: 0
+check-run-bar.sh exists and scores one FILE, not a fleet.
+
+comparable: GitHub Actions All workflows list (cli/cli) shows 2500+ runs with pass/fail on the row without opening a log.
+uiwalk: design/roadmap/evidence/2026-09-06-gh-actions-run-history.png
+docs: https://docs.github.com/en/actions/how-tos/monitor-workflows/view-workflow-run-history
