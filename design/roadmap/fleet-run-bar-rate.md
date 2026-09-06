@@ -1,5 +1,5 @@
 ---
-state: proposed
+state: promoted
 lens: journey
 created: 2026-09-06
 metric: in-repo scripts named score-run-bar-rate.sh that print hits/total for a directory of run files
