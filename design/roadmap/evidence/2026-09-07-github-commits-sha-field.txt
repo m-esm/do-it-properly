@@ -1,0 +1,20 @@
+# Saved extract 2026-09-07 from GitHub Docs: REST API endpoints for commits
+# URL: https://docs.github.com/en/rest/commits/commits?apiVersion=2022-11-28
+# Comparable product: identity is the `sha` field, not a grep for the substring "sha" in surrounding prose.
+
+Example List commits response (Status: 200), truncated:
+
+{
+  "url": "https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e",
+  "sha": "6dcb09b5b57875f334f61aebed695e2e4193db5e",
+  "html_url": "https://github.com/octocat/Hello-World/commit/6dcb09b5b57875f334f61aebed695e2e4193db5e",
+  "commit": {
+    "message": "Fix all the bugs",
+    "tree": {
+      "sha": "6dcb09b5b57875f334f61aebed695e2e4193db5e"
+    }
+  }
+}
+
+The same docs page also contains the letters "sha" in parameter names (`sha`, `commit_sha`) and in "SHA or branch to start listing commits from."
+GitHub still identifies the commit by the JSON `sha` field, not by whether those letters appear somewhere in the page.

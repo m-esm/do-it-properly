@@ -1,0 +1,34 @@
+# Query 2026-09-07: check-run-bar.sh vs ## Response (telemetry)
+# Jobs: cron jobs.json where skill is do-it-properly or do-it-properly is in skills[]
+# Checker: tests/check-run-bar.sh (whole-file grep for `done =` and `proven by`)
+# Machine-local paths omitted.
+
+jobs: 14
+runs: 230
+check-run-bar_pass_whole_file: 175
+Response_has_done_and_proven_by: 110
+false_positives_pass_but_Response_lacks_both: 65
+prompt_contains_done_and_proven_by: 151
+silent_Response: 9
+silent_Response_but_checker_pass: 9
+no_Response_header: 79
+no_Response_header_but_checker_pass: 24
+check-run-bar.sh_mentions_##_Response: 0
+
+GOAL.md number 2 scores `## Response`. The in-repo gate greps the whole FILE.
+Hermes cron dumps embed SKILL.md in the Prompt, which always contains `done =` and `proven by`.
+So a [SILENT] Response still prints: ok: run bar present.
+
+samples (job, file, kind):
+pawl-work-retro 2026-08-27_23-56-18.md SILENT checker_pass
+pawl-work-retro 2026-08-28_01-54-57.md SILENT checker_pass
+pawl-work-retro 2026-08-28_02-56-09.md SILENT checker_pass
+pawl-work-retro 2026-08-27_23-28-27.md NO_BAR_IN_RESP checker_pass
+
+in-repo measure this tick:
+python3 -c "from pathlib import Path; p=Path('tests/check-run-bar.sh'); print(int(p.is_file() and '## Response' in p.read_text()))"
+-> 0
+
+comparable: GitHub List commits JSON has a `sha` field. Grepping the docs page for the letters s-h-a is not the commit identity.
+extract: design/roadmap/evidence/2026-09-07-github-commits-sha-field.txt
+docs: https://docs.github.com/en/rest/commits/commits?apiVersion=2022-11-28
