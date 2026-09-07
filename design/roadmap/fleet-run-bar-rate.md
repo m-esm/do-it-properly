@@ -1,5 +1,5 @@
 ---
-state: building
+state: shipped
 lens: journey
 created: 2026-09-06
 metric: in-repo scripts named score-run-bar-rate.sh that print hits/total for a directory of run files
@@ -9,8 +9,8 @@ measure: python3 -c "from pathlib import Path; r=Path('.'); print(sum(1 for p in
 evidence:
   - design/roadmap/evidence/2026-09-06-gh-actions-run-history.png
   - design/roadmap/evidence/2026-09-06-skill-run-bar-rate.txt
-slices: 2/3
-after:
+slices: 3/3
+after: 1 (2026-09-07; python count of score-run-bar-rate.sh in tree)
 ---
 # Fleet score for the named-bar rate
 
@@ -26,4 +26,4 @@ GitHub: open Actions, see run outcomes in a list. do-it-properly: `bash tests/sc
 
 - [x] `tests/score-run-bar-rate.sh` plus a small mixed fixture dir; measure command prints 1.
 - [x] README Contract check names scoring a directory of runs, not only one FILE.
-- [ ] SKILL.md Verification points at the rate script without crossing the 80-line cap.
+- [x] SKILL.md Verification points at the rate script without crossing the 80-line cap.
