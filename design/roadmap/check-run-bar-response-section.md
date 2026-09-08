@@ -1,5 +1,5 @@
 ---
-state: proposed
+state: promoted
 lens: telemetry
 created: 2026-09-07
 metric: check-run-bar.sh files that mention ## Response so they score the run body not the Prompt-embedded skill
