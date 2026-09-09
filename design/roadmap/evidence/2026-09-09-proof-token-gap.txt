@@ -1,0 +1,44 @@
+# Query 2026-09-09: GOAL.md number 3 vs in-repo gates
+# Jobs: cron jobs.json where skill is do-it-properly or do-it-properly is in skills[]
+# Files: cron/output/<job_id>/*.md, ## Response scored for `done =` and `proven by`
+# Machine-local paths omitted.
+
+GOAL.md number 3: bars whose proof token is verifiable
+(a SHA on a remote, a path that exists, a URL) rather than a pasted grep
+today: unknown; target: 90% of stated bars
+
+in-repo check-proof-token.sh count this tick: 0
+check-run-bar.sh exists and exits 0 iff the Response contains the strings
+`done =` and `proven by`. It does not inspect Y.
+
+broken path (temp FILE, not committed):
+  ## Response
+  done = shipped the bar, proven by the grep of SKILL.md above; not required: a SHA.
+  bash tests/check-run-bar.sh FILE -> exit 0, "ok: run bar present"
+  A pasted grep is a legal named bar under the only run gate.
+
+skill-loading dumps this tick:
+  jobs: 9
+  files: 205
+  stated bars (done = and proven by in ## Response): 143
+  check-run-bar.sh cannot split those 143 into SHA / path / URL / pasted-grep
+  so GOAL.md number 3 stays "today: unknown"
+
+per_job name n stated
+improve-agents 14 12
+pawl-work-retro 50 7
+onlydash-mac-develop 50 47
+team-forum 8 2
+ch-3dvp 17 17
+ch-mechlib 17 17
+ch-smart-subagents 17 15
+ch-do-it-properly 16 13
+ch-onlydash-landing 16 13
+
+live origin/main identity this tick (git ls-remote, not a grep of SKILL.md):
+  1ba4e5b9dd095eb7e41a647bf5b7bc02746293eb    refs/heads/main
+SKILL.md grep -c sha: 1 (the Proof token sentence). That hit is not the commit.
+
+comparable: GitHub Get a reference returns object.sha or 404.
+uiwalk: design/roadmap/evidence/2026-09-09-github-get-ref.png
+extract: design/roadmap/evidence/2026-09-09-github-get-ref-extract.txt

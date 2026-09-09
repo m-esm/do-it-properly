@@ -1,0 +1,28 @@
+# Saved extract 2026-09-09 from GitHub Docs: REST API endpoints for Git references
+# URL: https://docs.github.com/en/rest/git/refs?apiVersion=2022-11-28
+# Comparable product: identity is object.sha (or 404 if the ref does not exist),
+# not a grep for the letters s-h-a on the docs page.
+# uiwalk: design/roadmap/evidence/2026-09-09-github-get-ref.png
+
+About Git references:
+"A Git reference (git ref) is a file that contains a Git commit SHA-1 hash."
+
+Get a reference:
+"If the :ref doesn't match an existing ref, a 404 is returned."
+
+HTTP status codes for Get a reference: 200 OK, 404 Resource not found, 409 Conflict.
+
+Example 200 body (truncated):
+{
+  "ref": "refs/heads/featureA",
+  "url": "https://api.github.com/repos/octocat/Hello-World/git/refs/heads/featureA",
+  "object": {
+    "type": "commit",
+    "sha": "aa218f56b14c9653891f9e74264a383fa43fefbd",
+    "url": "https://api.github.com/repos/octocat/Hello-World/git/commits/aa218f56b14c9653891f9e74264a383fa43fefbd"
+  }
+}
+
+The same docs page also contains the letters "sha" in prose ("SHA-1 hash", "commit hash")
+and in parameter names. GitHub still identifies the ref by object.sha, and a missing
+ref is 404, not a substring hit on that page.
