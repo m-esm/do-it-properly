@@ -1,5 +1,5 @@
 ---
-state: building
+state: shipped
 lens: telemetry
 created: 2026-09-07
 metric: check-run-bar.sh files that mention ## Response so they score the run body not the Prompt-embedded skill
@@ -9,7 +9,8 @@ measure: python3 -c "from pathlib import Path; p=Path('tests/check-run-bar.sh');
 evidence:
   - design/roadmap/evidence/2026-09-07-check-run-bar-prompt-false-positives.txt
   - design/roadmap/evidence/2026-09-07-github-commits-sha-field.txt
-slices: 1/2
+slices: 2/2
+after: 1 (2026-09-09; python int(Path('tests/check-run-bar.sh').read_text() contains '## Response'))
 ---
 # Score the ## Response, not the Prompt-embedded skill
 
@@ -24,4 +25,4 @@ GitHub: the commit is the `sha` field. do-it-properly: `bash tests/check-run-bar
 ## Slices
 
 - [x] `check-run-bar.sh` scores `## Response` when present; fixture is Prompt-with-skill + `[SILENT]` Response (must fail); measure command prints 1.
-- [ ] SKILL.md Verification notes the gate is the Response body, without crossing the 80-line cap. No README.
+- [x] SKILL.md Verification notes the gate is the Response body, without crossing the 80-line cap. No README.
