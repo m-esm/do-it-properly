@@ -10,7 +10,7 @@ evidence:
   - design/roadmap/evidence/2026-09-09-github-get-ref.png
   - design/roadmap/evidence/2026-09-09-github-get-ref-extract.txt
   - design/roadmap/evidence/2026-09-09-proof-token-gap.txt
-slices: 1/3
+slices: 2/3
 after:
 ---
 # Score the proof-token kind, not only the bar words
@@ -26,5 +26,5 @@ GitHub: Get a reference returns `object.sha` or 404. do-it-properly: `bash tests
 ## Slices
 
 - [x] `tests/check-proof-token.sh` plus fixtures (SHA pass, pasted-grep fail); measure command prints 1.
-- [ ] README Contract check names scoring the proof-token kind, not only that a bar was named.
+- [x] README Contract check names scoring the proof-token kind, not only that a bar was named.
 - [ ] SKILL.md Verification points at the script without crossing the 80-line cap.
