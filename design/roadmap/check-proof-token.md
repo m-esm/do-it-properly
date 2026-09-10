@@ -1,5 +1,5 @@
 ---
-state: promoted
+state: building
 lens: spec-gap
 created: 2026-09-09
 metric: in-repo scripts named check-proof-token.sh that exit 0/1 on whether Y after proven by is a SHA, existing path, or URL
@@ -10,7 +10,7 @@ evidence:
   - design/roadmap/evidence/2026-09-09-github-get-ref.png
   - design/roadmap/evidence/2026-09-09-github-get-ref-extract.txt
   - design/roadmap/evidence/2026-09-09-proof-token-gap.txt
-slices: 0/3
+slices: 1/3
 after:
 ---
 # Score the proof-token kind, not only the bar words
@@ -25,6 +25,6 @@ GitHub: Get a reference returns `object.sha` or 404. do-it-properly: `bash tests
 
 ## Slices
 
-- [ ] `tests/check-proof-token.sh` plus fixtures (SHA pass, pasted-grep fail); measure command prints 1.
+- [x] `tests/check-proof-token.sh` plus fixtures (SHA pass, pasted-grep fail); measure command prints 1.
 - [ ] README Contract check names scoring the proof-token kind, not only that a bar was named.
 - [ ] SKILL.md Verification points at the script without crossing the 80-line cap.
