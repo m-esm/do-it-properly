@@ -98,6 +98,14 @@ bash tests/score-run-bar-rate.sh DIR
 
 Prints `hits/total pct`. `check-run-bar.sh` stays the per-run gate.
 
+Score the proof-token kind, not only that a bar was named:
+
+```bash
+bash tests/check-proof-token.sh FILE
+```
+
+Exits 0 iff Y after `proven by` is a SHA, an existing path, or a URL. Pasted grep fails. `check-run-bar.sh` stays the named-bar gate.
+
 ## License
 
 MIT. Copyright 2026 Mohsen Esmaeili.
