@@ -1,5 +1,5 @@
 ---
-state: proposed
+state: promoted
 lens: spec-gap
 created: 2026-09-09
 metric: in-repo scripts named check-proof-token.sh that exit 0/1 on whether Y after proven by is a SHA, existing path, or URL
