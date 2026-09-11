@@ -1,0 +1,9 @@
+# Delete examples | LangChain
+# saved 2026-09-11 from https://docs.langchain.com/langsmith/smith-api/examples/delete-examples
+
+DELETE /api/v1/examples
+Query: example_ids string<uuid>[] required
+Response: 200 application/json Successful Response
+
+Identity of gone: the example_ids are removed from the dataset. They are not
+kept in the scored set as failing rows.

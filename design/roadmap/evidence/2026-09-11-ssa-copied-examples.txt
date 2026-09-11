@@ -1,0 +1,31 @@
+# 2026-09-11 subtraction query: SSA-copied examples/
+
+measure:
+python3 -c "from pathlib import Path; r=Path('examples'); print(sum(1 for p in r.glob('*.md') if p.is_file() and ('cgc' in p.name or 'ssa' in p.name)))"
+
+before: 6
+
+ssa_copied_examples (6):
+- examples/bar-cgc-omit-evidence.md  Y=the skip line
+- examples/bar-cgc-omit-route.md      Y=the example file
+- examples/bar-cgc-route-invalid.md   Y=the skip line
+- examples/bar-cgc-route-none.md      Y=the skip line
+- examples/bar-cgc-skip.md            Y=the example file
+- examples/bar-ssa-chmod-brief.md     Y=hermetic verify
+
+other examples (1):
+- examples/bar-3dvp-admin-users.md    Y=verify_admin_users  (not this deletion)
+
+proof-token: bash tests/check-proof-token.sh on each of the 6 SSA files -> FAIL (Y is not a SHA, existing path, or URL)
+proof-token hits among examples/*.md: 0/7
+
+GOAL.md: this skill is explicitly NOT a copy of smart-subagents dispatch and verify logic.
+SKILL.md Pitfalls: Copying SSA procedure text into this file or a session essay.
+tests/check-contract.sh currently requires examples/bar-cgc-route-invalid.md to exist.
+
+Comparable (outward):
+- Spec Kit living spec: plan.md and tasks.md are disposable derivations; Spec-first allows the spec to be discarded.
+  uiwalk: design/roadmap/evidence/2026-09-11-speckit-persistence.png
+  extract: design/roadmap/evidence/2026-09-11-speckit-persistence-extract.txt
+- LangChain DELETE /api/v1/examples?example_ids=... returns 200: gone from the scored set, not kept as a failing row.
+  extract: design/roadmap/evidence/2026-09-11-langchain-delete-examples.txt

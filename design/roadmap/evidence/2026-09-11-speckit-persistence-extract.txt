@@ -1,0 +1,15 @@
+# Spec Persistence Models | Spec Kit Documentation
+# saved 2026-09-11 from https://github.github.com/spec-kit/concepts/spec-persistence.html
+
+Spec Kit intentionally leaves teams in control of what happens to spec.md,
+plan.md, and tasks.md after requirements change.
+
+Spec-first: write a spec before coding, then allow it to be discarded.
+
+Living spec: spec.md is the contract and the other artifacts are derived from it.
+Teams update spec.md first and then regenerate or revise plan.md and tasks.md
+from that source. The plan and task list are still valuable, but they are
+treated as disposable derivations rather than permanent sources of truth.
+
+uiwalk PNG: design/roadmap/evidence/2026-09-11-speckit-persistence.png
+(desktop shot of the same page; heading Spec Persistence Models; TOC includes Living Spec)
