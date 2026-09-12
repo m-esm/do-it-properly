@@ -1,5 +1,5 @@
 ---
-state: proposed
+state: killed
 lens: subtraction
 created: 2026-09-11
 metric: examples/*.md files whose names contain cgc or ssa
